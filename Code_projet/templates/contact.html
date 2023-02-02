@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6b20b1c14d.js" crossorigin="anonymous"></script>
+
+  </head>
+	<body>
+		<section class="header">
+			<form class="ajout-contact" action="info" method="POST" style="display: inline;">
+				<label for="Message">Nom & Prénom: </label>
+				<input class = "type" type="text" name="Nom" value="" required></input>
+				<label for="Message">Numéro de téléphone: </label>
+				<input class = "type" type="number" name="Numéro" value=""min = "0" max="9999999999" required></input>
+				<label for="Message">Adresse postale: </label>
+				<input class = "type" type="text" name="Adresse" value=""></input>
+				<label for="Message">Adresse-mail:</i> </label>
+				<input class = "type" type="email" name="Mail" value="" ></input>
+    
+				<button class = "button-ajouter"><i class="fas fa-plus-circle add"><input class = "button-ajouter" type="submit" value = "Ajouter"></i></input></button>
+			</form>
+		</section>
+		<section class = "edit">	
+			<form action="search" method="POST" class="search-bar" id='search-form'>		
+				<input type="search" class="type" name="contactsearch" placeholder="Rechercher" value={{search_input}}><i onclick="document.getElementById('search-form').submit();" style="padding-left: 5px;"class="fas fa-search"></i>	
+			</form>
+			
+			<form class="trier" action="trier" method="POST" style="display: inline;">
+				<button class = "button-trier"><i class='fa fa-sort-alpha-asc'><input class = "button-trier" type="submit" value="Trier" name = "trier" ></i></input></button>
+			</form> 	
+		</section>
+	
+		<section class = "les-contacts">
+            <div class= "elem">
+                {% for elem in Contactes %}
+            <details>
+                <summary class= "nom  nom-de-contact" id= "nom"><i class="fa fa-id-badge"></i> {{elem["nom"]}} </summary>
+                <p class= "nom-de-contact" id= "numero"><i class="fa fa-phone"></i> {{elem["numéro"]}} </p>
+                <p class= "nom-de-contact"id= "adresse"><i class="fa fa-map-marker"></i> {{elem["adresse_postale"]}} </p>
+                <p class= "nom-de-contact" id= "mail"><i class="fa fa-envelope"></i> {{elem["adresse_mail"]}} </p>
+				
+				<form class="modif" action="modifier" method="POST" style="display: inline;">
+					<button class = "button"><i class="fa fa-pencil-square-o"><input class = "button" type="submit" value="Modifier" name = "modifier" ></i></input></button>
+					<input class = "compteur" value= {{loop.index0}} name= "compteur">  </input>
+				</form>
+				<form class="supp" action="supp" method="POST" id = "supp" style="display: inline;">
+					<button class = " button"><i class="fas fa-trash delete-icon"><input class = "button" type="submit" value="Supprimer" name = "supprimer" ></i></input></button>
+					<input class = "compteur" value= {{loop.index0}} name= "compteur">  </input>
+				</form>
+				<form class="share" action="share" method="POST" id = "share" style="display: inline;">
+					<button class = "button"><i class="fa fa-share-alt" aria-hidden="true"><input class = "button" type="submit" value="Partager" name = "share" ></i></input></button>
+					<input class = "compteur" value= {{loop.index0}} name= "compteur">  </input>
+				</form>	
+				
+            </details>
+        {% endfor %}
+            </div>
+        </section>
+	</body>
+</html>

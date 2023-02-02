@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modification de contact</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6b20b1c14d.js" crossorigin="anonymous"></script>
+    
+  </head>
+  <body>
+	<header class="modification">
+		{% for elem in Contactes %}
+		<form class="contact-modifer" action="modif" method="POST">
+			<p><label for="Message">Nom: </label>
+			<input class = "elem-modif" type="text" name="Nom" value="{{elem['nom']}}"  required></input></p>
+			<p><label for="Message">Numéro de téléphone: </label>
+			<input class = "elem-modif" type="number" name="Numéro" value="{{elem['numéro']}}"min = "0" max="9999999999" required></input><p/>
+			<p><label for="Message">Adresse postale: </label>
+			<input class = "elem-modif" type="text" name="Adresse" value="{{elem['adresse_postale']}}"></input></p>
+			<p><label for="Message">Adresse-mail: </label>
+			<input class = "elem-modif" type="email" name="Mail" value="{{elem['adresse_mail']}}"></input></p>
+    
+		<button class = "button-modif"><input class = "button-modif" type="submit" value = "Modifier"><i class="fa fa-pencil-square-o" ></i></input></button>
+		<button class = "button-modif"><input class = "button-modif" type="submit" value = "Annuler	"><i class="fa fa-pencil-square-o" ></i></input></button>
+		</form>
+		{% endfor %}
+	</header>
+</html>
