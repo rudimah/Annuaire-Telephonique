@@ -1,20 +1,30 @@
- ## Guide d'utilisation:
-Après l'installation de tous les fichers.
-  - Lancer le ficher serveur.py 
-    ( Si le module Flask n'est pas installé, merci de bien vouloir  l'installer 
-    en entrant la commande dans le terminal de python la commande suivante: pip install flask )
-  - Après avoie lancer le serveur, dans le terminal, vous aurez l'adresse du serveur, copier celle ci 
-  - Coller le sur votre navigateur suivi de "/contact.html"
-Vous etes sur le site. Bonne viste. 
+## Guide d'utilisation
 
-## Détail du projet 
-Ce projet a été fait en collaboration avec Regan SASIKUMAR à distance. Nous l'avons fait en février 2022, fin d'annnée de première de NSI. 
+Après avoir téléchargé tous les fichiers nécessaires :
 
-Nous avons utliser de l'HTML, du CSS et du Python (module Flask).
+1. Lancez le fichier `serveur.py`.
+   - Si le module **Flask** n'est pas installé, exécutez la commande suivante dans le terminal Python pour l'installer :  
+     ```bash
+     pip install flask
+     ```
+2. Une fois le serveur démarré, l'adresse du serveur sera affichée dans le terminal.
+3. Copiez cette adresse et collez-la dans votre navigateur, en ajoutant `/contact.html` à la fin de l'URL.
 
-Nous avons donc commmencer de 0 avec nos connaisances. 
-Nous avons tout de même été aider par:
-  - Notre professeur de NSI 
-  - Membre du module Flask qui sont sur Discord
-  - Et des vidéos youtube (pour la partie CSS)
-  
+Vous voilà sur le site. Bonne visite !
+
+---
+
+## Détails du projet
+
+Ce projet a été réalisé en collaboration avec Regan SASIKUMAR à distance, en février 2022, à la fin de notre première année de NSI.  
+L'objectif était de créer un site permettant de gérer un répertoire de contacts, accessible à toutes les personnes connectées au même réseau.
+
+### Technologies utilisées :
+- **HTML** pour la structure du site
+- **CSS** pour le style et la mise en page
+- **Python** avec le module **Flask** pour la gestion du serveur.
+
+Nous avons démarré le projet avec les connaissances que nous avions, et avons bénéficié de l'aide de :
+- Notre professeur de NSI
+- La communauté Flask sur Discord
+- Des tutoriels YouTube (notamment pour la partie CSS)
